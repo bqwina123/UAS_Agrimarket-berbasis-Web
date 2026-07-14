@@ -2,95 +2,133 @@
 # 🌾 AgriMarket
 ## Aplikasi Marketplace Pertanian dengan Transparansi Harga Pasar
 
+![Version](https://img.shields.io/badge/version-1.0-green)
+![Platform](https://img.shields.io/badge/platform-Web-blue)
+![Backend](https://img.shields.io/badge/backend-Node.js-success)
+![Frontend](https://img.shields.io/badge/frontend-Vue.js-42b883)
+![Database](https://img.shields.io/badge/database-PostgreSQL-blue)
+
 ---
 
-## 📖 Deskripsi Singkat
+## 📖 Deskripsi
 
-AgriMarket merupakan aplikasi marketplace pertanian berbasis web yang bertujuan menghubungkan petani secara langsung dengan pembeli tanpa melalui tengkulak. Aplikasi ini menyediakan informasi harga komoditas pertanian secara transparan berdasarkan data dari berbagai pasar tradisional sehingga petani dapat menentukan harga jual yang lebih kompetitif dan pembeli memperoleh informasi harga yang akurat.
+**AgriMarket** merupakan aplikasi marketplace pertanian berbasis web yang dirancang untuk menghubungkan petani secara langsung dengan pembeli tanpa melalui perantara (tengkulak). Aplikasi ini menyediakan informasi harga komoditas dari berbagai pasar tradisional sehingga petani dapat menentukan harga jual yang lebih kompetitif dan pembeli memperoleh informasi harga yang transparan.
+
+Aplikasi dikembangkan menggunakan **Node.js**, **Express.js**, **Vue.js**, dan **PostgreSQL** dengan metode **Rapid Application Development (RAD)**.
+
+---
+
+# 🎯 Tujuan Aplikasi
+
+- Membantu petani menjual hasil panen secara langsung kepada pembeli.
+- Menyediakan transparansi harga komoditas dari berbagai pasar.
+- Mempermudah proses transaksi jual beli hasil pertanian.
+- Memberikan informasi harga pasar secara real-time.
+- Mengurangi ketergantungan petani terhadap tengkulak.
 
 ---
 
 # ✨ Fitur Utama
 
-## 👤 Autentikasi Pengguna
+## 👥 Autentikasi Pengguna
 - Registrasi akun
 - Login
-- Multi Role (Admin, Petani, Pembeli)
 - Logout
+- Multi Role (Admin, Petani, Pembeli)
+- Manajemen Profil
+
+---
 
 ## 🛒 Fitur Pembeli
+
 - Melihat daftar komoditas
-- Pencarian komoditas
-- Filter komoditas
-- Detail produk
-- Keranjang belanja
+- Melihat detail produk
+- Pencarian produk
+- Filter produk berdasarkan kategori
+- Filter berdasarkan harga
+- Melihat harga pasar
+- Perbandingan harga pasar dengan harga petani
+- Keranjang Belanja
 - Checkout
 - Konfirmasi pembayaran
 - Riwayat transaksi
 - Wishlist
 - Notifikasi
 
+---
+
 ## 🌱 Fitur Petani
-- Dashboard petani
-- Kelola produk
-- Tambah produk
-- Edit produk
-- Hapus produk
+
+- Dashboard Petani
+- Tambah Produk
+- Edit Produk
+- Hapus Produk
+- Kelola stok
 - Melihat harga pasar
-- Melihat pesanan masuk
+- Menerima pesanan
 - Mengubah status pesanan
 - Riwayat penjualan
+- Notifikasi
+
+---
 
 ## ⚙️ Fitur Admin
+
 - Dashboard Admin
 - Manajemen Pengguna
 - Manajemen Pasar
 - Manajemen Komoditas
-- Manajemen Harga
+- Manajemen Data Harga
+- Upload Bulk Harga
+- Export CSV Harga
 - Manajemen Transaksi
 - Manajemen Ulasan
 - Manajemen Promo
-- Export Laporan
 - Sinkronisasi Database
+- Export Laporan
 
 ---
 
-# 💻 Teknologi yang Digunakan
-
-## Frontend
-- Vue.js 3
-- Vite
-- Bootstrap 5
-- CSS
-- HTML5
-- JavaScript
+# 🛠 Teknologi yang Digunakan
 
 ## Backend
+
 - Node.js
 - Express.js
 - JWT Authentication
 - bcryptjs
+- Multer
+- Express Validator
+
+## Frontend
+
+- Vue.js 3
+- Vite
+- Bootstrap 5
+- HTML5
+- CSS3
+- JavaScript
 
 ## Database
+
 - PostgreSQL
 - PostGIS
 
 ## Library
+
 - Axios
 - Chart.js
-- Multer
-- Express Validator
 - Dotenv
 - Cors
 
 ---
 
-# 📋 Persyaratan Sistem
+# 💻 Persyaratan Sistem
 
 ## Software
 
-- Node.js 20 atau lebih baru
-- PostgreSQL 16
+- Node.js 20+
+- PostgreSQL 16+
 - Git
 - Visual Studio Code
 
@@ -102,13 +140,13 @@ AgriMarket merupakan aplikasi marketplace pertanian berbasis web yang bertujuan 
 
 ## Operating System
 
-- Windows 10/11
+- Windows 10 / 11
 - Linux
 - macOS
 
 ---
 
-# ⚙️ Langkah Instalasi
+# 📥 Instalasi
 
 ## 1. Clone Repository
 
@@ -116,27 +154,39 @@ AgriMarket merupakan aplikasi marketplace pertanian berbasis web yang bertujuan 
 git clone https://github.com/username/agrimarket.git
 ```
 
-## 2. Masuk ke Folder Project
+Masuk ke folder project
 
 ```bash
 cd agrimarket
 ```
 
-## 3. Install Dependency
+---
+
+## 2. Install Dependency
+
+Backend
 
 ```bash
 npm install
 ```
 
-## 4. Buat File Environment
+Frontend
+
+```bash
+npm install
+```
+
+---
+
+## 3. Konfigurasi Environment
 
 Buat file
 
-```
+```text
 .env
 ```
 
-Contoh konfigurasi
+Isi file
 
 ```env
 PORT=3000
@@ -147,10 +197,18 @@ DB_NAME=agrimarket
 DB_USER=postgres
 DB_PASSWORD=password
 
-JWT_SECRET=agrimarketsecret
+JWT_SECRET=agrimarket_secret
 ```
 
-## 5. Import Database
+---
+
+## 4. Import Database
+
+Buka PostgreSQL kemudian buat database
+
+```
+agrimarket
+```
 
 Import file
 
@@ -158,13 +216,11 @@ Import file
 agrimarket.sql
 ```
 
-ke PostgreSQL.
-
 ---
 
-# ▶️ Cara Menjalankan Aplikasi
+# ▶️ Menjalankan Aplikasi
 
-## Menjalankan Backend
+## Backend
 
 ```bash
 npm run dev
@@ -184,7 +240,7 @@ http://localhost:3000
 
 ---
 
-## Menjalankan Frontend
+## Frontend
 
 ```bash
 npm run dev
@@ -200,81 +256,59 @@ http://localhost:5173
 
 # 👤 Akun Demo
 
-## Admin
+## Administrator
 
-Email
-
-```
-admin@agrimarket.com
-```
-
-Password
-
-```
-admin123
-```
+| Email | Password |
+|--------|----------|
+| admin@agrimarket.com | admin123 |
 
 ---
 
 ## Petani
 
-Email
-
-```
-petani@agrimarket.com
-```
-
-Password
-
-```
-petani123
-```
+| Email | Password |
+|--------|----------|
+| petani@agrimarket.com | petani123 |
 
 ---
 
 ## Pembeli
 
-Email
-
-```
-pembeli@agrimarket.com
-```
-
-Password
-
-```
-pembeli123
-```
+| Email | Password |
+|--------|----------|
+| pembeli@agrimarket.com | pembeli123 |
 
 ---
 
-# 🗄️ Struktur Database
+# 🗄 Struktur Database
 
 Database menggunakan PostgreSQL.
 
-Tabel utama yang digunakan:
+## Tabel
+
+- users
+- categories
+- products
+- product_images
+- markets
+- market_prices
+- orders
+- order_items
+- transactions
+- reviews
+- carts
+- cart_items
+- addresses
+- wishlist
+- notifications
+- promotions
+
+---
+
+## Relasi Database
 
 ```
-users
-categories
-products
-product_images
-markets
-market_prices
-orders
-order_items
-transactions
-reviews
-addresses
-wishlist
-notifications
-promotions
-```
-
-Relasi utama:
-
-```
-User
+Users
 │
 ├── Products
 ├── Orders
@@ -284,8 +318,8 @@ User
 
 Products
 │
-├── Category
-├── Images
+├── Categories
+├── Product Images
 └── Order Items
 
 Markets
@@ -300,31 +334,40 @@ Orders
 
 ---
 
-# 📁 Struktur Folder
+# 📂 Struktur Folder
 
 ```
-agrimarket
+AgriMarket
 │
 ├── backend
+│   ├── config
 │   ├── controllers
 │   ├── middleware
 │   ├── models
 │   ├── routes
-│   ├── config
+│   ├── uploads
+│   ├── app.js
 │   └── server.js
 │
 ├── frontend
+│   ├── public
 │   ├── src
-│   ├── assets
-│   ├── components
-│   ├── views
-│   ├── router
-│   └── App.vue
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── layouts
+│   │   ├── router
+│   │   ├── stores
+│   │   ├── views
+│   │   └── App.vue
+│   └── vite.config.js
 │
 ├── database
-│   └── agrimarket.sql
+│   ├── agrimarket.sql
+│   └── migration.sql
 │
 ├── package.json
+├── .env
+├── .gitignore
 └── README.md
 ```
 
@@ -332,34 +375,55 @@ agrimarket
 
 # 📸 Tampilan Aplikasi
 
-- Halaman Beranda
-- Login
-- Registrasi
-- Dashboard Admin
-- Dashboard Petani
-- Dashboard Pembeli
+### Halaman Pembeli
+
+- Beranda
+- Detail Produk
+- Keranjang Belanja
+- Checkout
+- Riwayat Pesanan
+
+### Halaman Petani
+
+- Dashboard
+- Produk Saya
+- Tambah Produk
+- Riwayat Penjualan
+
+### Halaman Admin
+
+- Dashboard
 - Manajemen Pengguna
 - Manajemen Pasar
 - Manajemen Komoditas
+- Manajemen Data Harga
+- Manajemen Transaksi
+- Manajemen Promo
+
+---
+
+# 🧪 Pengujian Sistem
+
+Metode pengujian yang digunakan adalah **Black Box Testing**.
+
+Hasil pengujian menunjukkan seluruh fitur utama aplikasi berjalan sesuai dengan kebutuhan fungsional yang telah dirancang, meliputi:
+
+- Registrasi
+- Login
+- Manajemen Produk
+- Manajemen Pasar
 - Manajemen Harga
-- Marketplace
+- Keranjang Belanja
 - Checkout
-- Transaksi
+- Pembayaran
+- Riwayat Transaksi
+- Dashboard Admin
 
----
+Seluruh skenario pengujian memperoleh status **Valid**.
 
-# 👨‍💻 Pengembang
-
-**Nama Proyek**
-
-AgriMarket
-
-**Dikembangkan oleh**
-
-Program Studi Sistem Informasi
-
----
 
 # 📄 Lisensi
 
-Project ini dibuat untuk keperluan penelitian dan pembelajaran.
+Proyek ini dikembangkan untuk keperluan penelitian dan pembelajaran. Penggunaan kode sumber diperbolehkan dengan tetap mencantumkan sumber pengembang.
+
+
